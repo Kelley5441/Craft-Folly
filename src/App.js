@@ -1,57 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const bundles = [
-  {
-    title: "Tumblers & More Bundle",
-    image: "/images/tumblers.jpg",
-    price: "$24.99",
-  },
-  {
-    title: "Spring/Summer & Easter Collection",
-    image: "/images/spring-easter.jpg",
-    price: "$18.00",
-  },
-  {
-    title: "Floral Bundle",
-    image: "/images/floral.jpg",
-    price: "$22.50",
-  },
-];
-
 export default function App() {
   return (
-    <main className="p-4 max-w-5xl mx-auto">
+    <main className="p-4 max-w-3xl mx-auto text-center">
       <motion.h1
-        className="text-4xl font-bold text-center mb-6 text-yellow-600"
-        initial={{ opacity: 0, y: -20 }}
+        className="text-5xl font-bold text-yellow-600 mb-4"
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
-        Welcome to Craft Folly
+        Craft Folly
       </motion.h1>
-
-      <p className="text-center mb-10 text-lg text-gray-600">
-        Where stash meets cash! Explore unique craft bundles ready to spark your creativity.
+      <p className="text-xl text-gray-700 mb-6">
+        Where stash meets cash — buy, sell, and share craft supplies with ease.
       </p>
-
-      <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {bundles.map((bundle, index) => (
-          <div key={index} className="rounded-2xl shadow-xl bg-white">
-            <img
-              src={bundle.image}
-              alt={bundle.title}
-              className="rounded-t-2xl h-48 w-full object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{bundle.title}</h2>
-              <p className="text-gray-700 mb-3">{bundle.price}</p>
-              <button className="w-full bg-yellow-500 text-white py-2 rounded-xl hover:bg-yellow-600 transition">
-                View Collection
-              </button>
-            </div>
-          </div>
-        ))}
-      </section>
+      <div className="space-y-4">
+        <a
+          href="#shop"
+          className="inline-block bg-yellow-500 text-white px-6 py-3 rounded-xl hover:bg-yellow-600 transition"
+        >
+          Start Shopping
+        </a>
+        <br />
+        <a
+          href="#sell"
+          className="inline-block text-yellow-600 underline hover:text-yellow-800"
+        >
+          Become a Seller
+        </a>
+      </div>
     </main>
   );
 }
